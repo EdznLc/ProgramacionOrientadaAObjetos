@@ -49,7 +49,7 @@ class Vista:
         tk.Button(window, text="Registrar", bg="green", fg="white", command=lambda:
             funciones.Controlador.registrar_usuario(window,nombre.get(),apellidos.get(),email.get(),psw.get()),
             ).pack(pady=20)
-        tk.Button(window, text="Volver", command=Vista.menu_principal).pack(pady=5)
+        tk.Button(window, text="Volver", command=lambda:Vista.menu_principal(window)).pack(pady=5)
     
     @staticmethod
     def login(window):
@@ -68,7 +68,7 @@ class Vista:
         tk.Button(window, text="Entrar", bg="blue", fg="white", command=lambda:
             funciones.Controlador.login(window,email.get(), psw.get())
             ).pack(pady=20)
-        tk.Button(window, text="Volver", command=Vista.menu_principal).pack(pady=5)
+        tk.Button(window, text="Volver", command=lambda:Vista.menu_principal(window)).pack(pady=5)
     
     @staticmethod
     def menu_notas(window, id, nombre, apellidos):
